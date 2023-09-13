@@ -6,3 +6,7 @@
     max-width: 1320px;
     margin: 0 auto;
 }
+
+.title-shadow {
+    text-shadow: 6px 9px 4px rgba(192, 177, 177, 0.979);
+}

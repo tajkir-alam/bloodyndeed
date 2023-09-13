@@ -11,7 +11,7 @@ const Page = () => {
     const [Error, setError] = useState('');
     const [showPass, setShowPass] = useState(false);
     const router = useRouter();
-    const { emailSignup, logOut, loader, setLoader } = useContext(AuthContext)
+    const { emailLogin, setLoader, loader } = useContext(AuthContext);
 
     const Toast = Swal.mixin({
         toast: true,
@@ -33,39 +33,24 @@ const Page = () => {
     const onSubmit = (data) => {
         setError('');
         setLoader(true);
-        const name = data.name;
         const email = data.email;
         const password = data.password;
-        const userInfo = { name, email, role: 'viewer' }
-        emailSignup(name, email, password)
+
+        setLoader(true);
+        emailLogin(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
-                if (user) {
-                    fetch('/api/users', {
-                        method: "POST",
-                        headers: {
-                            'content-type': 'application/json',
-                        },
-                        body: JSON.stringify(userInfo),
-                    })
-                        .then(res => res.json())
-                        .then(() => {
-                            router.push('/login');
-                            Toast.fire({
-                                icon: 'success',
-                                title: 'Signed in successfully'
-                            });
-                            reset();
-                        })
-                }
+                router.push('/')
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Signed in successfully'
+                });
                 setLoader(false);
-                logOut();
+                reset();
             })
             .catch(error => {
-                setError(error.message.split('(')[1].split(')')[0].split('/')[1])
-                console.log(error.message);
-                setLoader(false)
+                setError(error.message.split('(')[1].split(')')[0].split('/')[1]);
+                setLoader(false);
             })
     }
 
@@ -74,7 +59,7 @@ const Page = () => {
             <div className='w-full lg:w-[600px]'>
                 <div>
                     <div className='text-center'>
-                        <h1 className='text-xl md:text-4xl capitalize title-shadow'>Let&apos;s start giving blood</h1>
+                        <h1 className='text-xl md:text-4xl capitalize title-shadow'>login to save life</h1>
                         <p className='text-sm mt-3'>
                             Use your email for registration
                         </p>
@@ -82,11 +67,6 @@ const Page = () => {
                     <div className='mt-6'>
                         <form onSubmit={handleSubmit(onSubmit)} className='w-full px-6 lg:px-28'>
                             <div className='flex flex-col gap-6'>
-                                <Input
-                                    variant="standard"
-                                    label="Name"
-                                    {...register("name", { required: true })}
-                                />
                                 <Input
                                     variant="standard"
                                     label="Email"
@@ -125,11 +105,10 @@ const Page = () => {
                                     <span className="loading loading-bars loading-lg"></span>
                                 </p>
                             }
-                            <div className='flex justify-center items-center'>
+                            <span className='flex justify-center items-center'>
                                 {/* <input type="submit" className='btn bg-[#319DFF] rounded-3xl text-white border-0 px-12 hover:bg-[#319DFF]' /> */}
                                 <Button type='submit' variant='gradient' fullWidth className='tracking-widest'>Sign up</Button>
-                            </div>
-
+                            </span>
                         </form>
                     </div>
                 </div>
