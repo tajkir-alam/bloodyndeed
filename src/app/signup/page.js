@@ -4,7 +4,7 @@ import { Button, Input } from '@material-tailwind/react';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form"
-import { FaEye, FaRegEnvelope, FaRegUser } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaRegEnvelope, FaRegUser } from 'react-icons/fa';
 import { HiOutlineLockClosed } from "react-icons/hi2";
 import Swal from 'sweetalert2';
 
@@ -102,10 +102,17 @@ const Page = () => {
                                             type={!showPass ? 'password' : 'text'}
                                             {...register("password", { required: true, minLength: 5 })}
                                         />
-                                        <FaEye
-                                            onClick={handleShowPass}
-                                            className='absolute end-0 inset-y-1/2 mr-2 cursor-pointer'
-                                        />
+                                        {!showPass ?
+                                            <FaEye
+                                                onClick={handleShowPass}
+                                                className='absolute end-0 inset-y-1/2 mr-2 cursor-pointer'
+                                            />
+                                            :
+                                            <FaEyeSlash
+                                                onClick={handleShowPass}
+                                                className='absolute end-0 inset-y-1/2 mr-2 cursor-pointer'
+                                            />
+                                        }
                                     </div>
                                 </div>
                                 {errors.password &&
