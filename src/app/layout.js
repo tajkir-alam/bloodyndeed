@@ -1,18 +1,13 @@
-import AuthProvider from '@/Providers/AuthProvider'
-import './globals.css'
-import { Inter } from 'next/font/google'
+'use client';
+import AuthProvider from '@/Providers/AuthProvider';
+import './globals.css';
+import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Bloodyndeed',
   description: 'Get Blood When You Need',
-  icons: [
-    {
-      rel: 'icon',
-      url: '/logo.png'
-    }
-  ]
 }
 
 export default function RootLayout({ children }) {
