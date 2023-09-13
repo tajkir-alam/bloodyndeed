@@ -69,7 +69,7 @@ const Nav = () => {
     return (
         <Navbar className="h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
             <div className="flex items-center justify-between text-blue-gray-900 container">
-                <Link href='/' className="flex items-center gap-2">
+                <Link href='/' className="flex items-center">
                     <Image
                         src='/logo.png'
                         alt='logo'
@@ -77,7 +77,8 @@ const Nav = () => {
                         height={50}
                     />
                     <Typography
-                        className="mr-4 cursor-pointer py-1.5 font-medium"
+                        variant='h3'
+                        className="mr-4 cursor-pointer py-1.5 font-medium italic"
                     >
                         Bloodyndeed
                     </Typography>
