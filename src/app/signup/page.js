@@ -37,11 +37,10 @@ const Page = () => {
         const name = data.name;
         const email = data.email;
         const password = data.password;
-        const userInfo = { name, email, role: 'viewer' }
+        const userInfo = { name, email, role: 'donor' }
         emailSignup(name, email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
                 if (user) {
                     fetch('/api/users', {
                         method: "POST",
@@ -129,9 +128,9 @@ const Page = () => {
                             <div className='flex justify-center items-center'>
                                 <Button type='submit' variant='gradient' fullWidth className='tracking-widest'>Sign up</Button>
                             </div>
-                            <div className="flex justify-end mt-3 text-blue-700 text-sm underline">
-                                <Link href='/login' className='capitalize'>
-                                    already have an account? sign up
+                            <div className="flex justify-end mt-3 capitalize text-blue-700 text-sm underline underline-offset-2">
+                                <Link href='/login'>
+                                    already have an account? sign in
                                 </Link>
                             </div>
                         </form>

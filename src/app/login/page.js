@@ -40,7 +40,6 @@ const Page = () => {
         setLoader(true);
         emailLogin(email, password)
             .then(result => {
-                const user = result.user;
                 router.push('/')
                 Toast.fire({
                     icon: 'success',
@@ -62,7 +61,7 @@ const Page = () => {
                     <div className='text-center'>
                         <h1 className='text-xl md:text-4xl capitalize title-shadow'>login to save life</h1>
                         <p className='text-sm mt-3'>
-                            Use your email for registration
+                            Use your email for login
                         </p>
                     </div>
                     <div className='mt-6'>
@@ -109,12 +108,12 @@ const Page = () => {
                             <div className='flex justify-center items-center'>
                                 <Button type='submit' variant='gradient' fullWidth className='tracking-widest'>Sign up</Button>
                             </div>
-                            <div className="flex justify-between mt-3 text-blue-700 text-sm underline">
-                                <Link href={'/forget-password'}>
-                                    Forgot Password?
+                            <div className="flex justify-between mt-3 capitalize text-blue-700 text-sm underline underline-offset-2">
+                                <Link href='/forget-password'>
+                                    Forgot Password? 
                                 </Link>
-                                <Link href='/signup' className='capitalize'>
-                                    don&apos;t have an account? sign up
+                                <Link href='/signup'>
+                                    don&apos;t have an account? sign up 
                                 </Link>
                             </div>
                         </form>
