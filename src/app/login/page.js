@@ -1,6 +1,7 @@
 "use client"
 import { AuthContext } from '@/Providers/AuthProvider';
 import { Button, Input } from '@material-tailwind/react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form"
@@ -105,10 +106,17 @@ const Page = () => {
                                     <span className="loading loading-bars loading-lg"></span>
                                 </p>
                             }
-                            <span className='flex justify-center items-center'>
-                                {/* <input type="submit" className='btn bg-[#319DFF] rounded-3xl text-white border-0 px-12 hover:bg-[#319DFF]' /> */}
+                            <div className='flex justify-center items-center'>
                                 <Button type='submit' variant='gradient' fullWidth className='tracking-widest'>Sign up</Button>
-                            </span>
+                            </div>
+                            <div className="flex justify-between mt-3 text-blue-700 text-sm underline">
+                                <Link href={'/forget-password'}>
+                                    Forgot Password?
+                                </Link>
+                                <Link href='/signup' className='capitalize'>
+                                    don&apos;t have an account? sign up
+                                </Link>
+                            </div>
                         </form>
                     </div>
                 </div>
