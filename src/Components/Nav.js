@@ -5,7 +5,7 @@ import {
     Typography,
     Button,
     IconButton,
-    Card,
+    MobileNav,
     Collapse,
 } from "@material-tailwind/react";
 import Link from 'next/link';
@@ -133,14 +133,14 @@ const Nav = () => {
                     </IconButton>
                 </div>
             </div>
-            <Collapse open={openNav}>
+            <MobileNav open={openNav}>
                 {navList}
                 <Link href='/login'>
                     <Button variant="gradient" size="sm" fullWidth className="mb-2">
                         Login
                     </Button>
                 </Link>
-            </Collapse>
+            </MobileNav>
         </Navbar>
     );
 };
