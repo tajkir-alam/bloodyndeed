@@ -4,12 +4,13 @@ import { Button, Input } from '@material-tailwind/react';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form"
-import { FaRegEnvelope, FaRegUser } from 'react-icons/fa';
+import { FaEye, FaRegEnvelope, FaRegUser } from 'react-icons/fa';
 import { HiOutlineLockClosed } from "react-icons/hi2";
 import Swal from 'sweetalert2';
 
 const Page = () => {
     const [Error, setError] = useState('');
+    const [showPass, setShowPass] = useState(false);
     const router = useRouter();
 
     const { emailSignup, logOut, loader, setLoader } = useContext(AuthContext)
@@ -25,6 +26,10 @@ const Page = () => {
             toast.addEventListener('mouseleave', Swal.resumeTimer)
         }
     })
+
+    const handleShowPass = () => {
+        setShowPass(!showPass);
+    }
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
     const onSubmit = (data) => {
@@ -90,11 +95,18 @@ const Page = () => {
                                         label="Email"
                                         {...register("email", { required: true })}
                                     />
-                                    <Input
-                                        variant="standard"
-                                        label="Password"
-                                        {...register("password", { required: true, minLength: 5 })}
-                                    />
+                                    <div className="relative">
+                                        <Input
+                                            variant="standard"
+                                            label="Password"
+                                            type={!showPass ? 'password' : 'text'}
+                                            {...register("password", { required: true, minLength: 5 })}
+                                        />
+                                        <FaEye
+                                            onClick={handleShowPass}
+                                            className='absolute end-0 inset-y-1/2 mr-2 cursor-pointer'
+                                        />
+                                    </div>
                                 </div>
                                 {errors.password &&
                                     <p className='text-black/75 my-5 text-center tracking-widest font-semibold capitalize '>
