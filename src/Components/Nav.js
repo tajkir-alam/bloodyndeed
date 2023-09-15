@@ -15,12 +15,12 @@ const Nav = () => {
     const [openNav, setOpenNav] = useState(false);
     const toggleOpen = () => setOpenNav((cur) => !cur);
 
-    useEffect(() => {
-        window.addEventListener(
-            "resize",
-            () => window.innerWidth >= 960 && setOpenNav(false)
-        );
-    }, []);
+    // useEffect(() => {
+    //     window.addEventListener(
+    //         "resize",
+    //         () => window.innerWidth >= 960 && setOpenNav(false)
+    //     );
+    // }, []);
 
     const navList = (
         <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
@@ -85,7 +85,7 @@ const Nav = () => {
                     </Typography>
                 </Link>
                 <div className="flex items-center gap-4">
-                    <div className="mr-4 sm:hidden lg:block">{navList}</div>
+                    <div className="mr-4 hidden lg:block">{navList}</div>
                     <Link href='/login'>
                         <Button
                             variant="gradient"
@@ -97,7 +97,7 @@ const Nav = () => {
                     </Link>
                     <IconButton
                         variant="text"
-                        className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent sm:block lg:hidden"
+                        className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent block lg:hidden"
                         ripple={false}
                         // onClick={() => setOpenNav(!openNav)}
                         onClick={toggleOpen}
