@@ -97,7 +97,7 @@ const Nav = () => {
                     </Link>
                     <IconButton
                         variant="text"
-                        className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+                        className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent block lg:hidden"
                         ripple={false}
                         // onClick={() => setOpenNav(!openNav)}
                         onClick={toggleOpen}
