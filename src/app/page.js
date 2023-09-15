@@ -1,5 +1,5 @@
 "use client";
-import { Typography } from "@material-tailwind/react";
+import { Button, Typography } from "@material-tailwind/react";
 import Image from "next/image";
 
 export default function Home() {
@@ -14,6 +14,7 @@ export default function Home() {
               Your Blood Can <br />
               Save A Life
             </Typography>
+            <Button variant="outlined" className="mt-5 tracking-widest">Check who needs your blood</Button>
           </div>
           <div>
             <Image
