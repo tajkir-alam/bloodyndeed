@@ -12,7 +12,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const Nav = () => {
-    const [openNav, setOpenNav] = useState(false);
+    const [openNav, setOpenNav] = useState(true);
     const toggleOpen = () => setOpenNav((cur) => !cur);
 
     useEffect(() => {
