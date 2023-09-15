@@ -13,6 +13,7 @@ import Image from 'next/image';
 
 const Nav = () => {
     const [openNav, setOpenNav] = useState(false);
+    const toggleOpen = () => setOpenNav((cur) => !cur);
 
     useEffect(() => {
         window.addEventListener(
@@ -98,7 +99,8 @@ const Nav = () => {
                         variant="text"
                         className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
                         ripple={false}
-                        onClick={() => setOpenNav(!openNav)}
+                        // onClick={() => setOpenNav(!openNav)}
+                        onClick={toggleOpen}
                     >
                         {openNav ? (
                             <svg
@@ -133,14 +135,14 @@ const Nav = () => {
                     </IconButton>
                 </div>
             </div>
-            <MobileNav open={openNav}>
+            <Collapse open={openNav}>
                 {navList}
                 <Link href='/login'>
                     <Button variant="gradient" size="sm" fullWidth className="mb-2">
                         Login
                     </Button>
                 </Link>
-            </MobileNav>
+            </Collapse>
         </Navbar>
     );
 };
