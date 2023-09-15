@@ -12,7 +12,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const Nav = () => {
-    const [openNav, setOpenNav] = useState(true);
+    const [openNav, setOpenNav] = useState(false);
     const toggleOpen = () => setOpenNav((cur) => !cur);
 
     useEffect(() => {
@@ -85,7 +85,7 @@ const Nav = () => {
                     </Typography>
                 </Link>
                 <div className="flex items-center gap-4">
-                    <div className="mr-4 hidden lg:block">{navList}</div>
+                    <div className="mr-4 sm:hidden lg:block">{navList}</div>
                     <Link href='/login'>
                         <Button
                             variant="gradient"
