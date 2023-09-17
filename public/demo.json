@@ -1,0 +1,73 @@
+{
+    "bangladesh": [
+        {
+            "division_name": "Dhaka",
+            "districts": [
+                {
+                    "district_name": "Dhaka",
+                    "thana_or_upazila": [
+                        "Adabar",
+                        "Badda",
+                        "Dhanmondi",
+                        "kalabagan"
+                    ]
+                },
+                {
+                    "district_name": "Gazipur",
+                    "thana_or_upazila": [
+                        "Gazipur Sadar",
+                        "Kaliganj",
+                        "Kaliakair",
+                        "Kapasia"
+                    ]
+                }
+            ]
+        },
+        {
+            "division_name": "Rangpur",
+            "districts": [
+                {
+                    "district_name": "Dinajpur",
+                    "thana_or_upazila": [
+                        "Birampur",
+                        "Birganj",
+                        "Biral",
+                        "Fulbari"
+                    ]
+                },
+                {
+                    "district_name": "Kurigram",
+                    "thana_or_upazila": [
+                        "Bhurungamari",
+                        "Char Rajbari",
+                        "Ulipur",
+                        "Rajarhat"
+                    ]
+                }
+            ]
+        },
+        {
+            "division_name": "Sylhet",
+            "districts": [
+                {
+                    "district_name": "Habiganj",
+                    "thana_or_upazila": [
+                        "Ajmiriganj",
+                        "Bahubal",
+                        "Lakhai",
+                        "Chunarughat"
+                    ]
+                },
+                {
+                    "district_name": "Sylhet",
+                    "thana_or_upazila": [
+                        "Balaganj",
+                        "Beani Bazar",
+                        "Jaintiapur",
+                        "Zakiganj"
+                    ]
+                }
+            ]
+        }
+    ]
+}
