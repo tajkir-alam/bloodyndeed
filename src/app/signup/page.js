@@ -1,6 +1,6 @@
 "use client"
 import { AuthContext } from '@/Providers/AuthProvider';
-import { Button, Input } from '@material-tailwind/react';
+// import { Button, Input } from '@material-tailwind/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react';
@@ -82,18 +82,18 @@ const Page = () => {
                     <div className='mt-6'>
                         <form onSubmit={handleSubmit(onSubmit)} className='w-full px-6 lg:px-28'>
                             <div className='flex flex-col gap-6'>
-                                <Input
+                                <input
                                     variant="standard"
                                     label="Name"
                                     {...register("name", { required: true })}
                                 />
-                                <Input
+                                <input
                                     variant="standard"
                                     label="Email"
                                     {...register("email", { required: true })}
                                 />
                                 <div className="relative">
-                                    <Input
+                                    <input
                                         variant="standard"
                                         label="Password"
                                         type={!showPass ? 'password' : 'text'}
@@ -126,7 +126,7 @@ const Page = () => {
                                 </p>
                             }
                             <div className='flex justify-center items-center'>
-                                <Button type='submit' variant='gradient' fullWidth className='tracking-widest'>Sign up</Button>
+                                <button type='submit' variant='gradient' fullWidth className='tracking-widest'>Sign up</button>
                             </div>
                             <div className="flex justify-end mt-3 capitalize text-blue-700 text-sm underline underline-offset-2">
                                 <Link href='/login'>
