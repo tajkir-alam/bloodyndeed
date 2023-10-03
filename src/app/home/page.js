@@ -1,5 +1,5 @@
 "use client";
-import { Button, Typography } from "@material-tailwind/react";
+// import { Button, Typography } from "@material-tailwind/react";
 import Image from "next/image";
 import SearchBlood from "./SearchBlood";
 
@@ -55,12 +55,12 @@ export default function Home() {
                     className="-z-20 h-auto w-auto"
                 />
                 <div className="absolute z-20 text-center">
-                    <Typography variant="h1" className="text-md lg:text-6xl text-white/90 title-shadow">
+                    <h1 variant="h1" className="text-md lg:text-6xl text-white/90 title-shadow">
                         Do You Know? <br />
                         Your Blood Can <br />
                         Save A Life
-                    </Typography>
-                    <Button variant="outlined" color="white" className="mt-2 text-[8px] lg:text-xs px-3 py-2 lg:px-6 lg:py-3 lg:mt-8 tracking-widest hover:bg-black hover:text-white ">Need Blood?</Button>
+                    </h1>
+                    <button variant="outlined" color="white" className="mt-2 text-[8px] lg:text-xs px-3 py-2 lg:px-6 lg:py-3 lg:mt-8 tracking-widest hover:bg-black hover:text-white ">Need Blood?</button>
                 </div>
                 <div className="absolute top-0 bg-black/80 z-10 w-full h-full"></div>
             </section>

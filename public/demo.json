@@ -1,6 +1,82 @@
 {
     "bangladesh": [
         {
+            "division_name": "Barisal",
+            "districts": [
+                {
+                    "district_name": "Barguna",
+                    "thana_or_upazila": [
+                        "Amtali",
+                        "Bamna",
+                        "Barguna Sadar",
+                        "Betagi",
+                        "Patharghata",
+                        "Taltali"
+                    ]
+                },
+                {
+                    "district_name": "Barisal",
+                    "thana_or_upazila": [
+                        "Agailjhara",
+                        "Babuganj",
+                        "Bakerganj",
+                        "Banari Para",
+                        "Gaurnadi",
+                        "Hizla",
+                        "Barisal Sadar (Kotwali)",
+                        "Mhendiganj",
+                        "Muladi",
+                        "Wazirpur"
+                    ]
+                },
+                {
+                    "district_name": "Bhola",
+                    "thana_or_upazila": [
+                        "Bhola Sadar",
+                        "Burhanuddin",
+                        "Char Fasson",
+                        "Daulat Khan",
+                        "Lalmohan",
+                        "Tazumuddin"
+                    ]
+                },
+                {
+                    "district_name": "Jhalokati",
+                    "thana_or_upazila": [
+                        "Jhalokati Sadar",
+                        "Khanthalia",
+                        "Nalchity",
+                        "Rajapur"
+                    ]
+                },
+                {
+                    "district_name": "Patuakhali",
+                    "thana_or_upazila": [
+                        "Bauphal",
+                        "Dashmina",
+                        "Dumki",
+                        "Galachipa",
+                        "Kalapara",
+                        "Mirzaganj",
+                        "Patuakhali Sadar",
+                        "Rangabali"
+                    ]
+                },
+                {
+                    "district_name": "Pirojpur",
+                    "thana_or_upazila": [
+                        "Bhandaria",
+                        "Kawkhali",
+                        "Mathbaria",
+                        "Nazirpur",
+                        "Pirojpur Sadar",
+                        "Nesarabad (Swarupkati)",
+                        "Zianagar"
+                    ]
+                }
+            ]
+        },
+        {
             "division_name": "Dhaka",
             "districts": [
                 {

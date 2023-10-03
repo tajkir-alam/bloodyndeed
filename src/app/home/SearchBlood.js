@@ -44,7 +44,7 @@ const SearchBlood = () => {
 
     return (
         <section className="flex justify-center my-12">
-            <div>
+        <div>
                 <select name="division" value={selectedDivision} onChange={handleDivisionChange}>
                     <option value="">Select Division</option>
                     {divisionOptions}
