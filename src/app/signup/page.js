@@ -75,39 +75,57 @@ const Page = () => {
                 <div>
                     <div className='text-center'>
                         <h1 className='text-xl md:text-4xl capitalize title-shadow'>Let&apos;s start giving blood</h1>
-                        <p className='text-sm mt-3'>
+                        <p className='text-sm mt-4'>
                             Use your email for registration
                         </p>
                     </div>
                     <div className='mt-6'>
-                        <form onSubmit={handleSubmit(onSubmit)} className='w-full px-6 lg:px-28'>
-                            <div className='flex flex-col gap-6'>
-                                <input
-                                    variant="standard"
-                                    label="Name"
-                                    {...register("name", { required: true })}
-                                />
-                                <input
-                                    variant="standard"
-                                    label="Email"
-                                    {...register("email", { required: true })}
-                                />
-                                <div className="relative">
+                        <form onSubmit={handleSubmit(onSubmit)} className='w-full px-6 lg:px-28 mt-10'>
+                            <div className='flex flex-col gap-12'>
+                                <div className='relative'>
                                     <input
-                                        variant="standard"
-                                        label="Password"
-                                        type={!showPass ? 'password' : 'text'}
-                                        {...register("password", { required: true, minLength: 5 })}
+                                        id='name'
+                                        className='border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                        placeholder=' '
+                                        {...register("name", { required: true })}
                                     />
+                                    <label htmlFor="name" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                        Name
+                                    </label>
+                                </div>
+                                <div className='relative'>
+                                    <input
+                                        id='email'
+                                        className='border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                        placeholder=' '
+                                        {...register("email", { required: true })}
+                                    />
+                                    <label htmlFor="email" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                        Email
+                                    </label>
+                                </div>
+                                <div className="relative">
+                                    <div className='relative'>
+                                        <input
+                                            id='password'
+                                            className='border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                            placeholder=' '
+                                            type={!showPass ? 'password' : 'text'}
+                                            {...register("password", { required: true })}
+                                        />
+                                        <label htmlFor="password" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                            Password
+                                        </label>
+                                    </div>
                                     {!showPass ?
                                         <FaEye
                                             onClick={handleShowPass}
-                                            className='absolute end-0 inset-y-1/2 mr-2 cursor-pointer'
+                                            className='absolute right-0 inset-y-0 mr-2 cursor-pointer'
                                         />
                                         :
                                         <FaEyeSlash
                                             onClick={handleShowPass}
-                                            className='absolute end-0 inset-y-1/2 mr-2 cursor-pointer'
+                                            className='absolute right-0 inset-y-0 mr-2 cursor-pointer'
                                         />
                                     }
                                 </div>
