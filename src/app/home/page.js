@@ -5,9 +5,10 @@ import Banner from "./Banner";
 export default function Home() {
 
   return (
-    <main>
+    <main className="h-[1500px]">
       {/* <Banner /> */}
-      <SearchBlood />
+      {/* <SearchBlood /> */}
+      cxvxc 
     </main>
   )
 }
