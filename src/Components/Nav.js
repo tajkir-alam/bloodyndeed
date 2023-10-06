@@ -39,7 +39,6 @@ const Nav = () => {
                                     <span className='group-hover:-mt-10 text-black duration-700'>
                                         {<navItem.icon className='text-2xl text-white group-hover:text-red-500 duration-700' />}
                                     </span>
-                                    {/* <span className='flex justify-center'> */}
                                     <span className='absolute top-10 opacity-0 group-hover:opacity-100 group-hover:top-0 duration-700 whitespace-nowrap'>
                                         {navItem.name}
                                     </span>

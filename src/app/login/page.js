@@ -54,7 +54,7 @@ const Page = () => {
     }
 
     return (
-        <div className="mx-4 lg:mx-44 py-20 h-screen flex justify-center items-center">
+        <div className="mx-4 lg:mx-44 h-screen flex justify-center items-center">
             <div className='w-full lg:w-[600px]'>
                 <div>
                     <div className='text-center'>
@@ -64,7 +64,7 @@ const Page = () => {
                         </p>
                     </div>
                     <div className='mt-6'>
-                        <form onSubmit={handleSubmit(onSubmit)} className='w-full px-6 lg:px-28 mt-10'>
+                        <form onSubmit={handleSubmit(onSubmit)} className='w-full px-2 lg:px-28 mt-10'>
                             <div className='flex flex-col gap-12'>
                                 <div className='relative'>
                                     <input
