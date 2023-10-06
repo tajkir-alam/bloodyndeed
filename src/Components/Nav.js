@@ -30,17 +30,17 @@ const Nav = () => {
 
     return (
         <nav className='fixed w-full bottom-0'>
-            <div className='bg-blue-900 w-full lg:w-5/12 mx-auto rounded-t-xl'>
+            <div className='bg-red-400 w-full lg:w-5/12 mx-auto rounded-t-xl'>
                 <ul className='text-white grid grid-cols-4 px-1 py-3'>
                     {
                         navList.map((navItem, i) =>
                             <li key={i} className='px-10 cursor-pointer group'>
                                 <Link href={navItem.href} className='flex flex-col gap-1 items-center relative'>
                                     <span className='group-hover:-mt-10 text-black duration-700'>
-                                        {<navItem.icon className='text-2xl text-white group-hover:text-sky-500 duration-700' />}
+                                        {<navItem.icon className='text-2xl text-white group-hover:text-red-500 duration-700' />}
                                     </span>
                                     {/* <span className='flex justify-center'> */}
-                                    <span className='absolute top-10 opacity-0 group-hover:opacity-100 group-hover:top-0 hover:text-sky-300 duration-700 whitespace-nowrap'>
+                                    <span className='absolute top-10 opacity-0 group-hover:opacity-100 group-hover:top-0 duration-700 whitespace-nowrap'>
                                         {navItem.name}
                                     </span>
                                 </Link>
