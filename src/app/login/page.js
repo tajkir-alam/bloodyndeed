@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form"
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaHandHoldingWater } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const Page = () => {
@@ -38,7 +38,7 @@ const Page = () => {
 
         setLoader(true);
         emailLogin(email, password)
-            .then(result => {
+            .then(() => {
                 router.push('/')
                 Toast.fire({
                     icon: 'success',
@@ -116,15 +116,14 @@ const Page = () => {
                                     <span className="loading loading-bars loading-lg"></span>
                                 </p>
                             }
-                            <div className='flex justify-center items-center'>
-                                <button type='submit' variant='gradient' fullWidth className='tracking-widest'>Sign up</button>
-                            </div>
-                            <div className="flex justify-between mt-3 capitalize text-blue-700 text-sm underline underline-offset-2">
+                            <button type='submit' className='btn bg-red-400 hover:bg-red-400/80 text-white w-full tracking-widest my-5'>Sign In</button>
+                            <div className="flex justify-between capitalize text-blue-700 text-sm underline underline-offset-2">
                                 <Link href='/forget-password'>
                                     Forgot Password?
                                 </Link>
-                                <Link href='/signup'>
+                                <Link href='/signup' className='flex gap-2 items-center'>
                                     become a donor
+                                    <FaHandHoldingWater className='text-xl text-red-600' />
                                 </Link>
                             </div>
                         </form>
