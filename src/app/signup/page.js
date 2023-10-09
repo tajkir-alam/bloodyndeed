@@ -70,88 +70,86 @@ const Page = () => {
     }
 
     return (
-        <div className="mx-4 lg:mx-44 h-screen flex justify-center items-center">
-            <div className='w-full lg:w-[600px]'>
-                <div>
-                    <div className='text-center'>
-                        <h1 className='text-xl md:text-4xl capitalize title-shadow'>Let&apos;s start giving blood</h1>
-                        <p className='text-sm mt-4'>
-                            Use your email for registration
-                        </p>
-                    </div>
-                    <div className='mt-6'>
-                        <form onSubmit={handleSubmit(onSubmit)} className='w-full px-2 lg:px-28 mt-10'>
-                            <div className='flex flex-col gap-12'>
-                                <div className='relative'>
-                                    <input
-                                        id='name'
-                                        className='border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
-                                        placeholder=' '
-                                        {...register("name", { required: true })}
-                                    />
-                                    <label htmlFor="name" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
-                                        Name
-                                    </label>
-                                </div>
-                                <div className='relative'>
-                                    <input
-                                        id='email'
-                                        className='border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
-                                        placeholder=' '
-                                        {...register("email", { required: true })}
-                                    />
-                                    <label htmlFor="email" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
-                                        Email
-                                    </label>
-                                </div>
-                                <div className="relative">
-                                    <div className='relative'>
-                                        <input
-                                            id='password'
-                                            className='border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
-                                            placeholder=' '
-                                            type={!showPass ? 'password' : 'text'}
-                                            {...register("password", { required: true })}
-                                        />
-                                        <label htmlFor="password" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
-                                            Password
-                                        </label>
-                                    </div>
-                                    {!showPass ?
-                                        <FaEye
-                                            onClick={handleShowPass}
-                                            className='absolute right-0 inset-y-0 mr-2 cursor-pointer'
-                                        />
-                                        :
-                                        <FaEyeSlash
-                                            onClick={handleShowPass}
-                                            className='absolute right-0 inset-y-0 mr-2 cursor-pointer'
-                                        />
-                                    }
-                                </div>
+        <div className="h-screen flex justify-center items-center bg-no-repeat bg-cover bg-center" style={{ backgroundImage: "url(/headerBanner.png)" }}>
+            <div className='w-full lg:w-[600px] py-16 shadow-inner hover:shadow-lg rounded-xl bg-red-500/5'>
+                <div className='text-center'>
+                    <h1 className='text-xl md:text-4xl capitalize title-shadow'>Let&apos;s start giving blood</h1>
+                    <p className='text-sm mt-4'>
+                        Use your email for registration
+                    </p>
+                </div>
+                <div className='mt-6'>
+                    <form onSubmit={handleSubmit(onSubmit)} className='w-full px-2 lg:px-28 mt-10'>
+                        <div className='flex flex-col gap-12'>
+                            <div className='relative'>
+                                <input
+                                    id='name'
+                                    className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                    placeholder=' '
+                                    {...register("name", { required: true })}
+                                />
+                                <label htmlFor="name" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                    Name
+                                </label>
                             </div>
-                            {errors.password &&
-                                <p className='text-black/75 my-5 text-center tracking-widest font-semibold capitalize '>
-                                    Password have to be more than 6 characters.
-                                </p>
-                            }
+                            <div className='relative'>
+                                <input
+                                    id='email'
+                                    className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                    placeholder=' '
+                                    {...register("email", { required: true })}
+                                />
+                                <label htmlFor="email" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                    Email
+                                </label>
+                            </div>
+                            <div className="relative">
+                                <div className='relative'>
+                                    <input
+                                        id='password'
+                                        className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                        placeholder=' '
+                                        type={!showPass ? 'password' : 'text'}
+                                        {...register("password", { required: true })}
+                                    />
+                                    <label htmlFor="password" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                        Password
+                                    </label>
+                                </div>
+                                {!showPass ?
+                                    <FaEye
+                                        onClick={handleShowPass}
+                                        className='absolute right-0 inset-y-0 mr-2 cursor-pointer'
+                                    />
+                                    :
+                                    <FaEyeSlash
+                                        onClick={handleShowPass}
+                                        className='absolute right-0 inset-y-0 mr-2 cursor-pointer'
+                                    />
+                                }
+                            </div>
+                        </div>
+                        {errors.password &&
                             <p className='text-black/75 my-5 text-center tracking-widest font-semibold capitalize '>
-                                {Error}
+                                Password have to be more than 6 characters.
                             </p>
-                            {loader &&
-                                <p className='text-black/75 my-5 text-center tracking-widest font-semibold capitalize '>
-                                    <span className="loading loading-bars loading-lg"></span>
-                                </p>
-                            }
-                            <button type='submit' className='btn bg-red-400 hover:bg-red-400/80 text-white w-full tracking-widest my-5'>Sign up</button>
-                            <div className="flex justify-end mt-3 capitalize text-blue-700 text-sm underline underline-offset-2">
-                                <Link href='/login' className='flex gap-2 items-center'>
-                                    already have an account? sign in
-                                    <FaHandHoldingHeart className='text-xl text-red-500' />
-                                </Link>
-                            </div>
-                        </form>
-                    </div>
+                        }
+                        <p className='text-black/75 my-5 text-center tracking-widest font-semibold capitalize '>
+                            {Error}
+                        </p>
+                        {loader &&
+                            <p className='text-black/75 my-5 text-center tracking-widest font-semibold capitalize '>
+                                <span className="loading loading-bars loading-lg"></span>
+                            </p>
+                        }
+                        <button type='submit' className='btn bg-red-400 hover:bg-red-400/80 text-white w-full tracking-widest my-5'>Sign up</button>
+                        <div className="flex justify-end mt-2 capitalize text-blue-700 text-sm underline underline-offset-2 font-semibold">
+                            <Link href='/login' className='flex gap-2 items-center glass px-3 py-1 rounded-md'>
+                                already have an account? sign in
+                                <FaHandHoldingHeart className='text-xl text-red-500' />
+                            </Link>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
