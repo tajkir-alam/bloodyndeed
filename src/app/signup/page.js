@@ -70,7 +70,7 @@ const Page = () => {
     }
 
     return (
-        <div className="h-screen flex justify-center items-center bg-no-repeat bg-cover bg-center" style={{ backgroundImage: "url(/headerBanner.png)" }}>
+        <div className="h-screen flex justify-center items-center bg-no-repeat bg-contain bg-center lg:bg-bottom" style={{ backgroundImage: "url(/headerBanner.png)" }}>
             <div className='w-full lg:w-[600px] py-16 shadow-inner hover:shadow-lg rounded-xl bg-red-500/5'>
                 <div className='text-center'>
                     <h1 className='text-xl md:text-4xl capitalize title-shadow'>Let&apos;s start giving blood</h1>
