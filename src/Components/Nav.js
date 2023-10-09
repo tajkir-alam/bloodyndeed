@@ -29,7 +29,7 @@ const Nav = () => {
     ]
 
     return (
-        <nav className='fixed w-full bottom-0'>
+        <nav className='fixed w-full bottom-0 z-50'>
             <div className='bg-red-400 w-full lg:w-5/12 mx-auto rounded-t-xl'>
                 <ul className='text-white grid grid-cols-4 px-1 py-3'>
                     {
