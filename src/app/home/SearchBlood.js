@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+import { FaSearch } from 'react-icons/fa';
 
 const SearchBlood = () => {
     const [areas, setAreas] = useState([]);
@@ -43,22 +45,53 @@ const SearchBlood = () => {
         ));
 
     return (
-        <section className="flex justify-center my-12">
-        <div>
-                <select name="division" value={selectedDivision} onChange={handleDivisionChange}>
-                    <option value="">Select Division</option>
-                    {divisionOptions}
-                </select>
-                <select name="district" value={selectedDistrict} onChange={handleDistrictChange}>
-                    <option value="">Select District</option>
-                    {districtOptions}
-                </select>
-                <select name="thana" defaultValue="">
-                    <option value="">Select Thana/Upazila</option>
-                    {thanaOptions}
-                </select>
+        <div className="flex flex-col gap-2 justify-center">
+            <select
+                name="division"
+                value={selectedDivision}
+                onChange={handleDivisionChange}
+                className='select select-error focus:outline-none'
+            >
+                <option value="">Select Division</option>
+                {divisionOptions}
+            </select>
+
+            <select
+                name="district"
+                value={selectedDistrict}
+                onChange={handleDistrictChange}
+                className='select select-error focus:outline-none'
+            >
+                <option value="">Select District</option>
+                {districtOptions}
+            </select>
+            <select
+                name="thana"
+                defaultValue=""
+                className='select select-error focus:outline-none'
+            >
+                <option value="">Select Thana/Upazila</option>
+                {thanaOptions}
+            </select>
+            <select
+                name="bloodGroup"
+                // value={selectedDivision}
+                // onChange={handleDivisionChange}
+                className='select select-error focus:outline-none'
+            >
+                <option value="">Select Blood Group</option>
+                {divisionOptions}
+            </select>
+
+            <div className='text-center text-white'>
+                <Link href="/"
+                    className="btn btn-ghost glass mt-2 tracking-widest bg-red-600 hover:bg-red-700 hover:scale-105 duration-500"
+                >
+                    <FaSearch />
+                    Find Donor
+                </Link>
             </div>
-        </section>
+        </div>
     );
 };
 

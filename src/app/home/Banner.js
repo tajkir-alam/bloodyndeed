@@ -5,17 +5,19 @@ import SearchBlood from './SearchBlood';
 const Banner = () => {
   return (
     // ---------- Banner Section 
-    <section className="">
+    <section>
       <h1 className="bg-red-800 text-md lg:text-4xl text-center text-white whitespace-nowrap py-4">
         Do You Know
         Your Blood Can
         Save A Life?
       </h1>
+
       <div className="relative flex flex-col-reverse lg:grid lg:grid-cols-5 lg:items-center">
-        {/* <div className="text-center w-full col-span-2 z-10 bg-[#ced5db]/50 h-full flex flex-col justify-center">
-            <button variant="outlined" className="mt-5 tracking-widest hover:bg-black hover:text-white">Check who needs your blood</button>
-          </div> */}
-        <div className='col-span-2 z-50 hidden lg:block'>
+
+        <div className='bg-blue-600/20 col-span-2 h-full z-10 hidden lg:flex lg:flex-col lg:justify-center px-4 space-y-6'>
+          <h1 className='text-white text-center text-3xl uppercase tracking-widest border-b pb-2'>
+            Find your Donor
+          </h1>
           <SearchBlood />
         </div>
 
