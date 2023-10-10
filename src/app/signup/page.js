@@ -80,60 +80,68 @@ const Page = () => {
                 </div>
                 <div className='mt-6'>
                     <form onSubmit={handleSubmit(onSubmit)} className='w-full px-2 lg:px-28 mt-10'>
-                        <div className='flex flex-col gap-12'>
+                        <div className='relative'>
+                            <input
+                                id='name'
+                                className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                placeholder=' '
+                                {...register("name", { required: true })}
+                            />
+                            <label htmlFor="name" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                Name
+                            </label>
+                            {errors.name &&
+                                <p className='text-black/75 mt-4 text-center tracking-widest font-semibold capitalize '>
+                                    Name field is required
+                                </p>
+                            }
+                        </div>
+                        <div className='relative my-8'>
+                            <input
+                                id='email'
+                                className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                placeholder=' '
+                                {...register("email", { required: true })}
+                            />
+                            <label htmlFor="email" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                Email
+                            </label>
+                            {errors.email &&
+                                <p className='text-black/75 mt-4 text-center tracking-widest font-semibold capitalize '>
+                                    Email field is required
+                                </p>
+                            }
+                        </div>
+                        <div className="relative">
                             <div className='relative'>
                                 <input
-                                    id='name'
+                                    id='password'
                                     className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
                                     placeholder=' '
-                                    {...register("name", { required: true })}
+                                    type={!showPass ? 'password' : 'text'}
+                                    {...register("password", { required: true })}
                                 />
-                                <label htmlFor="name" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
-                                    Name
+                                <label htmlFor="password" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                    Password
                                 </label>
-                            </div>
-                            <div className='relative'>
-                                <input
-                                    id='email'
-                                    className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
-                                    placeholder=' '
-                                    {...register("email", { required: true })}
-                                />
-                                <label htmlFor="email" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
-                                    Email
-                                </label>
-                            </div>
-                            <div className="relative">
-                                <div className='relative'>
-                                    <input
-                                        id='password'
-                                        className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
-                                        placeholder=' '
-                                        type={!showPass ? 'password' : 'text'}
-                                        {...register("password", { required: true })}
-                                    />
-                                    <label htmlFor="password" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
-                                        Password
-                                    </label>
-                                </div>
-                                {!showPass ?
-                                    <FaEye
-                                        onClick={handleShowPass}
-                                        className='absolute right-0 inset-y-0 mr-2 cursor-pointer'
-                                    />
-                                    :
-                                    <FaEyeSlash
-                                        onClick={handleShowPass}
-                                        className='absolute right-0 inset-y-0 mr-2 cursor-pointer'
-                                    />
+                                {errors.password &&
+                                    <p className='text-black/75 my-5 text-center tracking-widest font-semibold capitalize '>
+                                        Password have to be more than 6 characters.
+                                    </p>
                                 }
                             </div>
+                            {!showPass ?
+                                <FaEye
+                                    onClick={handleShowPass}
+                                    className='absolute right-0 inset-y-0 mr-2 cursor-pointer'
+                                />
+                                :
+                                <FaEyeSlash
+                                    onClick={handleShowPass}
+                                    className='absolute right-0 inset-y-0 mr-2 cursor-pointer'
+                                />
+                            }
                         </div>
-                        {errors.password &&
-                            <p className='text-black/75 my-5 text-center tracking-widest font-semibold capitalize '>
-                                Password have to be more than 6 characters.
-                            </p>
-                        }
                         <p className='text-black/75 my-5 text-center tracking-widest font-semibold capitalize '>
                             {Error}
                         </p>
