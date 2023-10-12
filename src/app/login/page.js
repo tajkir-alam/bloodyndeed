@@ -124,8 +124,8 @@ const Page = () => {
                                 Forgot Password?
                             </Link>
                             <Link href='/signup' className='flex gap-2 items-center glass px-3 py-1 rounded-md'>
-                                become a donor
                                 <FaHandHoldingWater className='text-xl text-red-600' />
+                                become a donor
                             </Link>
                         </div>
                     </form>

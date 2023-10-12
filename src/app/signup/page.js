@@ -112,6 +112,40 @@ const Page = () => {
                                 </p>
                             }
                         </div>
+                        <div className="grid grid-cols-2 gap-4 my-8">
+                            <div className='relative'>
+                                <input
+                                    id='contactNumber'
+                                    className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                    placeholder=' '
+                                    {...register("contactNumber", { required: true })}
+                                />
+                                <label htmlFor="contactNumber" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                    Contact Number
+                                </label>
+                                {errors.contactNumber &&
+                                    <p className='text-black/75 mt-4 text-center tracking-widest font-semibold capitalize '>
+                                        Contact Number field is required
+                                    </p>
+                                }
+                            </div>
+                            <div className='relative'>
+                                <input
+                                    id='bloodGroup'
+                                    className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                    placeholder=' '
+                                    {...register("bloodGroup", { required: true })}
+                                />
+                                <label htmlFor="bloodGroup" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                    Blood Group
+                                </label>
+                                {errors.bloodGroup &&
+                                    <p className='text-black/75 mt-4 text-center tracking-widest font-semibold capitalize '>
+                                        Blood Group field is required
+                                    </p>
+                                }
+                            </div>
+                        </div>
                         <div className="relative">
                             <div className='relative'>
                                 <input
@@ -153,8 +187,8 @@ const Page = () => {
                         <button type='submit' className='btn bg-red-400 hover:bg-red-400/80 text-white w-full tracking-widest my-5'>Sign up</button>
                         <div className="flex justify-end mt-2 capitalize text-blue-700 text-sm underline underline-offset-2 font-semibold">
                             <Link href='/login' className='flex gap-2 items-center glass px-3 py-1 rounded-md'>
+                                <FaHandHoldingHeart className='text-xl text-red-600' />
                                 already have an account? sign in
-                                <FaHandHoldingHeart className='text-xl text-red-500' />
                             </Link>
                         </div>
                     </form>

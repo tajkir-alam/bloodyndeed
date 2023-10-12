@@ -73,6 +73,7 @@ const SearchBlood = () => {
                 <option value="">Select Thana/Upazila</option>
                 {thanaOptions}
             </select>
+            
             <select
                 name="bloodGroup"
                 // value={selectedDivision}
