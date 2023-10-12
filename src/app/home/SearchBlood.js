@@ -1,3 +1,4 @@
+import BloodGroup from '@/Components/BloodGroup';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
@@ -22,6 +23,10 @@ const SearchBlood = () => {
     const handleDistrictChange = (event) => {
         setSelectedDistrict(event.target.value);
     };
+
+    const handleBloodGroup = (event) => {
+        console.log(event.target.value);
+    }
 
     const divisionOptions = areas.map((area) => (
         <option key={area.division_name} value={area.division_name}>
@@ -73,25 +78,16 @@ const SearchBlood = () => {
                 <option value="">Select Thana/Upazila</option>
                 {thanaOptions}
             </select>
-            
+
             <select
                 name="bloodGroup"
                 // value={selectedDivision}
-                // onChange={handleDivisionChange}
+                onChange={handleBloodGroup}
                 className='select select-error focus:outline-none'
             >
                 <option value="">Select Blood Group</option>
                 {thanaOptions &&
-                    <>
-                        <option value="A+">A+</option>
-                        <option value="A-">A-</option>
-                        <option value="B+">B+</option>
-                        <option value="B-">B-</option>
-                        <option value="AB+">AB+</option>
-                        <option value="AB-">AB-</option>
-                        <option value="O+">O+</option>
-                        <option value="O-">O-</option>
-                    </>
+                    <BloodGroup />
                 }
             </select>
 

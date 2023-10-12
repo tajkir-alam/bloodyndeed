@@ -1,4 +1,5 @@
 "use client"
+import BloodGroup from '@/Components/BloodGroup';
 import { AuthContext } from '@/Providers/AuthProvider';
 // import { Button, Input } from '@material-tailwind/react';
 import Link from 'next/link';
@@ -85,6 +86,7 @@ const Page = () => {
                                 id='name'
                                 className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
                                 placeholder=' '
+                                type='text'
                                 {...register("name", { required: true })}
                             />
                             <label htmlFor="name" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
@@ -101,6 +103,7 @@ const Page = () => {
                                 id='email'
                                 className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
                                 placeholder=' '
+                                type='email'
                                 {...register("email", { required: true })}
                             />
                             <label htmlFor="email" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
@@ -118,6 +121,7 @@ const Page = () => {
                                     id='contactNumber'
                                     className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
                                     placeholder=' '
+                                    type='number'
                                     {...register("contactNumber", { required: true })}
                                 />
                                 <label htmlFor="contactNumber" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
@@ -130,15 +134,20 @@ const Page = () => {
                                 }
                             </div>
                             <div className='relative'>
-                                <input
+                                <select
+                                    name="bloodGroup"
                                     id='bloodGroup'
-                                    className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
                                     placeholder=' '
                                     {...register("bloodGroup", { required: true })}
-                                />
-                                <label htmlFor="bloodGroup" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                    // onChange={handleBloodGroup}
+                                    className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                >
+                                    <option value="">Blood Group</option>
+                                    <BloodGroup />
+                                </select>
+                                {/* <label htmlFor="bloodGroup" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
                                     Blood Group
-                                </label>
+                                </label> */}
                                 {errors.bloodGroup &&
                                     <p className='text-black/75 mt-4 text-center tracking-widest font-semibold capitalize '>
                                         Blood Group field is required
