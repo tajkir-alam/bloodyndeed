@@ -1,16 +1,16 @@
 import React from 'react';
 
-const BloodGroup = () => {
+const BloodGroup = ({ className }) => {
     return (
         <>
-            <option value="A+">A+</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>
+            <option value="A+" className={className}>A+</option>
+            <option value="A-" className={className}>A-</option>
+            <option value="B+" className={className}>B+</option>
+            <option value="B-" className={className}>B-</option>
+            <option value="AB+" className={className}>AB+</option>
+            <option value="AB-" className={className}>AB-</option>
+            <option value="O+" className={className}>O+</option>
+            <option value="O-" className={className}>O-</option>
         </>
     );
 };

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 
-const SearchBlood = () => {
+const SearchBlood = ({ className }) => {
     const [areas, setAreas] = useState([]);
     const [selectedDivision, setSelectedDivision] = useState('');
     const [selectedDistrict, setSelectedDistrict] = useState('');
@@ -29,13 +29,13 @@ const SearchBlood = () => {
     }
 
     const divisionOptions = areas.map((area) => (
-        <option key={area.division_name} value={area.division_name}>
+        <option key={area.division_name} value={area.division_name} className='text-black'>
             {area.division_name}
         </option>
     ));
 
     const districtOptions = areas.find((area) => area.division_name === selectedDivision)?.districts.map((district) => (
-        <option key={district.district_name} value={district.district_name}>
+        <option key={district.district_name} value={district.district_name} className='text-black'>
             {district.district_name}
         </option>
     ));
@@ -44,20 +44,20 @@ const SearchBlood = () => {
         .find((area) => area.division_name === selectedDivision)
         ?.districts.find((district) => district.district_name === selectedDistrict)
         ?.thana_or_upazila.map((thana) => (
-            <option key={thana} value={thana}>
+            <option key={thana} value={thana} className='text-black'>
                 {thana}
             </option>
         ));
 
     return (
-        <div className="flex flex-col gap-2 justify-center">
+        <>
             <select
                 name="division"
                 value={selectedDivision}
                 onChange={handleDivisionChange}
-                className='select select-error focus:outline-none'
+                className={className}
             >
-                <option value="">Select Division</option>
+                <option value="">Division</option>
                 {divisionOptions}
             </select>
 
@@ -65,41 +65,21 @@ const SearchBlood = () => {
                 name="district"
                 value={selectedDistrict}
                 onChange={handleDistrictChange}
-                className='select select-error focus:outline-none'
+                className={className}
             >
-                <option value="">Select District</option>
+                <option value="">District</option>
                 {districtOptions}
             </select>
+
             <select
                 name="thana"
                 defaultValue=""
-                className='select select-error focus:outline-none'
+                className={className}
             >
-                <option value="">Select Thana/Upazila</option>
+                <option value="">Thana/Upazila</option>
                 {thanaOptions}
             </select>
-
-            <select
-                name="bloodGroup"
-                // value={selectedDivision}
-                onChange={handleBloodGroup}
-                className='select select-error focus:outline-none'
-            >
-                <option value="">Select Blood Group</option>
-                {thanaOptions &&
-                    <BloodGroup />
-                }
-            </select>
-
-            <div className='text-center text-white'>
-                <Link href="/"
-                    className="btn btn-ghost glass mt-2 tracking-widest bg-red-600 hover:bg-red-700 hover:scale-105 duration-500"
-                >
-                    <FaSearch />
-                    Find Donor
-                </Link>
-            </div>
-        </div>
+        </>
     );
 };
 

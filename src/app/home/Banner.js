@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
 import SearchBlood from './SearchBlood';
+import BloodGroup from '@/Components/BloodGroup';
+import Link from 'next/link';
+import { FaSearch } from 'react-icons/fa';
 
 const Banner = () => {
   return (
@@ -18,7 +21,30 @@ const Banner = () => {
           <h1 className='text-white text-center text-3xl uppercase tracking-widest border-b pb-2'>
             Find your Donor
           </h1>
-          <SearchBlood />
+
+          <div className="flex flex-col gap-2 justify-center">
+            <SearchBlood
+              className='select select-error focus:outline-none'
+            />
+
+            <select
+              name="bloodGroup"
+              // value={selectedDivision}
+              className='select select-error focus:outline-none'
+            >
+              <option value="">Select Blood Group</option>
+              <BloodGroup />
+            </select>
+
+            <div className='text-center text-white'>
+              <Link href="/"
+                className="btn btn-ghost glass mt-2 tracking-widest bg-red-600 hover:bg-red-700 hover:scale-105 duration-500"
+              >
+                <FaSearch />
+                Find Donor
+              </Link>
+            </div>
+          </div>
         </div>
 
         <div className='relative lg:col-span-3 h-[calc(850px-500px)] lg:h-screen bg-no-repeat bg-center bg-cover' style={{ backgroundImage: "url(/bannerBG.png)" }}>

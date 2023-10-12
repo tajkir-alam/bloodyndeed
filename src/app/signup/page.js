@@ -8,6 +8,7 @@ import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form"
 import { FaEye, FaEyeSlash, FaHandHoldingHeart } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import SearchBlood from '../home/SearchBlood';
 
 const Page = () => {
     const [Error, setError] = useState('');
@@ -71,11 +72,11 @@ const Page = () => {
     }
 
     return (
-        <div className="h-screen flex justify-center items-center bg-no-repeat bg-contain bg-center lg:bg-bottom" style={{ backgroundImage: "url(/AuthenticationBG.png)" }}>
-            <div className='w-full lg:w-[600px] py-16 shadow-inner hover:shadow-lg rounded-xl bg-red-500/5'>
+        <div className="relative h-screen flex justify-center items-center bg-no-repeat bg-contain bg-center lg:bg-bottom" style={{ backgroundImage: "url(/AuthenticationBG.png)" }}>
+            <div className='w-full lg:w-[600px] py-16 shadow-inner hover:shadow-lg rounded-xl bg-white/5 z-30'>
                 <div className='text-center'>
-                    <h1 className='text-xl md:text-4xl capitalize title-shadow glass inline px-8 py-1 rounded-md'>Let&apos;s start giving blood</h1>
-                    <p className='text-sm mt-4'>
+                    <h1 className='text-xl md:text-4xl text-white capitalize title-shadow glass inline px-8 py-1 rounded-md'>Let&apos;s start giving blood</h1>
+                    <p className='text-sm text-white mt-4'>
                         Use your email for registration
                     </p>
                 </div>
@@ -84,16 +85,16 @@ const Page = () => {
                         <div className='relative'>
                             <input
                                 id='name'
-                                className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                className='bg-transparent text-white border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
                                 placeholder=' '
                                 type='text'
                                 {...register("name", { required: true })}
                             />
-                            <label htmlFor="name" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                            <label htmlFor="name" className='absolute left-0 -top-6 cursor-text text-white/80 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
                                 Name
                             </label>
                             {errors.name &&
-                                <p className='text-black/75 mt-4 text-center tracking-widest font-semibold capitalize '>
+                                <p className='text-black/75 mt-4 text-center text-xs tracking-widest font-semibold capitalize '>
                                     Name field is required
                                 </p>
                             }
@@ -101,34 +102,34 @@ const Page = () => {
                         <div className='relative my-8'>
                             <input
                                 id='email'
-                                className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                className='bg-transparent text-white border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
                                 placeholder=' '
                                 type='email'
                                 {...register("email", { required: true })}
                             />
-                            <label htmlFor="email" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                            <label htmlFor="email" className='absolute left-0 -top-6 cursor-text text-white/80 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
                                 Email
                             </label>
                             {errors.email &&
-                                <p className='text-black/75 mt-4 text-center tracking-widest font-semibold capitalize '>
+                                <p className='text-black/75 mt-4 text-center text-xs tracking-widest font-semibold capitalize '>
                                     Email field is required
                                 </p>
                             }
                         </div>
-                        <div className="grid grid-cols-2 gap-4 my-8">
+                        <div className="grid grid-cols-2 gap-4 mt-8 mb-3">
                             <div className='relative'>
                                 <input
                                     id='contactNumber'
-                                    className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                    className='bg-transparent text-white border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
                                     placeholder=' '
                                     type='number'
                                     {...register("contactNumber", { required: true })}
                                 />
-                                <label htmlFor="contactNumber" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                <label htmlFor="contactNumber" className='absolute left-0 -top-6 cursor-text text-white/80 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
                                     Contact Number
                                 </label>
                                 {errors.contactNumber &&
-                                    <p className='text-black/75 mt-4 text-center tracking-widest font-semibold capitalize '>
+                                    <p className='text-black/75 mt-4 text-center text-xs tracking-widest font-semibold capitalize '>
                                         Contact Number field is required
                                     </p>
                                 }
@@ -140,31 +141,45 @@ const Page = () => {
                                     placeholder=' '
                                     {...register("bloodGroup", { required: true })}
                                     // onChange={handleBloodGroup}
-                                    className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                    className='appearance-none bg-transparent border-b-2 text-white outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
                                 >
-                                    <option value="">Blood Group</option>
-                                    <BloodGroup />
+                                    <option value="" className='text-black'>Blood Group</option>
+                                    <BloodGroup
+                                        className='text-black'
+                                    />
                                 </select>
-                                {/* <label htmlFor="bloodGroup" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
-                                    Blood Group
-                                </label> */}
                                 {errors.bloodGroup &&
-                                    <p className='text-black/75 mt-4 text-center tracking-widest font-semibold capitalize '>
+                                    <p className='text-black/75 mt-4 text-center text-xs tracking-widest font-semibold capitalize '>
                                         Blood Group field is required
                                     </p>
                                 }
                             </div>
                         </div>
+                        <div className='relative mb-8'>
+                            <label htmlFor="donationArea" className='cursor-text text-white/80 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                Priority Donation Area
+                            </label>
+                            <div className='grid grid-cols-3 gap-2 mt-1'>
+                                <SearchBlood
+                                    className='appearance-none bg-transparent border-b-2 text-white outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                />
+                            </div>
+                            {errors.donationArea &&
+                                <p className='text-black/75 mt-4 text-center text-xs tracking-widest font-semibold capitalize '>
+                                    Donation Area field is required
+                                </p>
+                            }
+                        </div>
                         <div className="relative">
                             <div className='relative'>
                                 <input
                                     id='password'
-                                    className='bg-transparent border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
+                                    className='bg-transparent text-white border-b-2 outline-none w-full peer focus:border-b-black/60 duration-700 ease-in-out'
                                     placeholder=' '
                                     type={!showPass ? 'password' : 'text'}
                                     {...register("password", { required: true })}
                                 />
-                                <label htmlFor="password" className='absolute left-0 -top-6 cursor-text text-slate-500 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
+                                <label htmlFor="password" className='absolute left-0 -top-6 cursor-text text-white/80 peer-placeholder-shown:text-md peer-focus:text-sm peer-focus:-top-6 peer-placeholder-shown:-top-2 duration-300 ease-in-out'>
                                     Password
                                 </label>
                                 {errors.password &&
@@ -176,12 +191,12 @@ const Page = () => {
                             {!showPass ?
                                 <FaEye
                                     onClick={handleShowPass}
-                                    className='absolute right-0 inset-y-0 mr-2 cursor-pointer'
+                                    className='absolute right-0 inset-y-0 text-white mr-2 cursor-pointer'
                                 />
                                 :
                                 <FaEyeSlash
                                     onClick={handleShowPass}
-                                    className='absolute right-0 inset-y-0 mr-2 cursor-pointer'
+                                    className='absolute right-0 inset-y-0 text-white mr-2 cursor-pointer'
                                 />
                             }
                         </div>
@@ -203,6 +218,8 @@ const Page = () => {
                     </form>
                 </div>
             </div>
+
+            <div className="absolute top-0 bg-black/40  w-full h-full"></div>
         </div>
     );
 };
